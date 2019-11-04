@@ -62,4 +62,14 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 
 ## Copyright and License
 
+<<<<<<< HEAD
 Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+=======
+Copyright 2013-2019 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-resume/blob/gh-pages/LICENSE) license.
+# VIDAS2
+# VIDAS2
+# VIDAS2
+# VIDAS2
+# VIDAS2
+# VIDAS2
+>>>>>>> 69a030b071c73be67f4222de98c13396758435d6
