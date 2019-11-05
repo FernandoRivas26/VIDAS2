@@ -419,45 +419,86 @@
 
       $('#add-pre').submit((e) => {
         e.preventDefault();
-        if($('#inputnombre').val() == '' || $('#inputPat').val() == '' || $('#email').val() == '' || $('#tel').val() == '' || $('#inpSangre').val() == null){
-          if($('#inputnombre').val() == ''){
-            if($('#inputnombre').hasClass('is-valid')){
-              $('#inputnombre').removeClass('is-valid');
-            }
-            $('#inputnombre').addClass('is-invalid');
-          }
+        if($("#gridCheck").prop('checked')){
+            if($('#inputnombre').val() == '' || $('#inputPat').val() == '' || $('#email').val() == '' || $('#tel').val() == '' || $('#inpSangre').val() == null || $('#carrera').val() == null || $('#cohorte').val() == null){
+                if($('#inputnombre').val() == ''){
+                    if($('#inputnombre').hasClass('is-valid')){
+                    $('#inputnombre').removeClass('is-valid');
+                    }
+                    $('#inputnombre').addClass('is-invalid');
+                }
 
-          if($('#inputPat').val() == ''){
-            if($('#inputPat').hasClass('is-valid')){
-              $('#inputPat').removeClass('is-valid');
-            }
-            $('#inputPat').addClass('is-invalid');
-          }
+                if($('#inputPat').val() == ''){
+                    if($('#inputPat').hasClass('is-valid')){
+                    $('#inputPat').removeClass('is-valid');
+                    }
+                    $('#inputPat').addClass('is-invalid');
+                }
 
-          if($('#email').val() == ''){
-            if($('#email').hasClass('is-valid')){
-              $('#email').removeClass('is-valid');
-            }
-            $('#email').addClass('is-invalid');
-          }
+                if($('#email').val() == ''){
+                    if($('#email').hasClass('is-valid')){
+                    $('#email').removeClass('is-valid');
+                    }
+                    $('#email').addClass('is-invalid');
+                }
 
-          if($('#tel').val() == ''){
-            if($('#tel').hasClass('is-valid')){
-              $('#tel').removeClass('is-valid');
-            }
-            $('#tel').addClass('is-invalid');
-          }
+                if($('#tel').val() == ''){
+                    if($('#tel').hasClass('is-valid')){
+                    $('#tel').removeClass('is-valid');
+                    }
+                    $('#tel').addClass('is-invalid');
+                }
 
-          if($('#inpSangre').val() == null){
-            if($('#inpSangre').hasClass('is-valid')){
-              $('#inpSangre').removeClass('is-valid');
+                if($('#inpSangre').val() == null){
+                    if($('#inpSangre').hasClass('is-valid')){
+                    $('#inpSangre').removeClass('is-valid');
+                    }
+                    $('#inpSangre').addClass('is-invalid');
+                }
+            }else{
+                //PHP COMPLETO
             }
-            $('#inpSangre').addClass('is-invalid');
-          }
+        }else{
+            if($('#inputnombre').val() == '' || $('#inputPat').val() == '' || $('#email').val() == '' || $('#tel').val() == '' || $('#inpSangre').val() == null){
+                if($('#inputnombre').val() == ''){
+                    if($('#inputnombre').hasClass('is-valid')){
+                    $('#inputnombre').removeClass('is-valid');
+                    }
+                    $('#inputnombre').addClass('is-invalid');
+                }
+
+                if($('#inputPat').val() == ''){
+                    if($('#inputPat').hasClass('is-valid')){
+                    $('#inputPat').removeClass('is-valid');
+                    }
+                    $('#inputPat').addClass('is-invalid');
+                }
+
+                if($('#email').val() == ''){
+                    if($('#email').hasClass('is-valid')){
+                    $('#email').removeClass('is-valid');
+                    }
+                    $('#email').addClass('is-invalid');
+                }
+
+                if($('#tel').val() == ''){
+                    if($('#tel').hasClass('is-valid')){
+                    $('#tel').removeClass('is-valid');
+                    }
+                    $('#tel').addClass('is-invalid');
+                }
+
+                if($('#inpSangre').val() == null){
+                    if($('#inpSangre').hasClass('is-valid')){
+                    $('#inpSangre').removeClass('is-valid');
+                    }
+                    $('#inpSangre').addClass('is-invalid');
+                }
+            }else{
+                //PHP MEDIO
+            }
         }
-        else{
-          alert('lml');
-        }
+
       });
     });
   </script>
