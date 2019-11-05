@@ -241,8 +241,7 @@
                                     <div class="form-group">
                                       <label for="carrera">Carrera</label>
                                       <select id="carrera" class="form-control">
-                                        <option selected disabled>Choose...</option>
-                                        <option>A</option>
+                                        <option selected disabled>Selecciona una carrera</option>
                                       </select>
                                     </div>
                                   </div>
@@ -336,11 +335,8 @@
       $.ajax({
         url: '/php/getCarreras.php',
         success: (data) => {
-          console.log(JSON.parse(data));
           var carreras = JSON.parse(data).carreras;
-          console.log(carreras);
           carreras.forEach((value, index) => {
-            console.log(value);
             $('#carrera').append(`<option value="${value.id_carrera}">${value.nombre}</option>`);
           });
         }
