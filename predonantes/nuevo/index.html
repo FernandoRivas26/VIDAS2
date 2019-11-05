@@ -222,8 +222,8 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group form-check" data-toggle="collapse" data-target="#datosalum">
-                            <input type="checkbox" class="form-check-input" id="gridcheck" >
-                            <label class="form-check-label" for="gridcheck">Alumno</label>
+                            <input type="checkbox" class="form-check-input" id="alum" >
+                            <label class="form-check-label" for="alum">Alumno</label>
                           </div>
                         </div>
                       </div>
@@ -417,7 +417,7 @@
 
       $('#add-pre').submit((e) => {
         e.preventDefault();
-        if($("#gridCheck").prop('checked')){
+        if($('#alum').prop('checked')){
             if($('#inputnombre').val() == '' || $('#inputPat').val() == '' || $('#email').val() == '' || $('#tel').val() == '' || $('#inpSangre').val() == null || $('#carrera').val() == null || $('#cohorte').val() == null){
                 if($('#inputnombre').val() == ''){
                     if($('#inputnombre').hasClass('is-valid')){
@@ -449,9 +449,23 @@
 
                 if($('#inpSangre').val() == null){
                     if($('#inpSangre').hasClass('is-valid')){
-                    $('#inpSangre').removeClass('is-valid');
+                      $('#inpSangre').removeClass('is-valid');
                     }
                     $('#inpSangre').addClass('is-invalid');
+                }
+
+                if($('#carrera').val() == null){
+                    if($('#carrera').hasClass('is-valid')){
+                      $('#carrera').removeClass('is-valid');
+                    }
+                    $('#carrera').addClass('is-invalid');
+                }
+
+                if($('#cohorte').val() == null){
+                    if($('#cohorte').hasClass('is-valid')){
+                      $('#cohorte').removeClass('is-valid');
+                    }
+                    $('#cohorte').addClass('is-invalid');
                 }
             }else{
                 //PHP COMPLETO
