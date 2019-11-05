@@ -241,8 +241,7 @@
                                     <div class="form-group">
                                       <label for="carrera">Carrera</label>
                                       <select id="carrera" class="form-control">
-                                        <option selected disabled>Choose...</option>
-                                        <option>A</option>
+                                        <option selected disabled>Selecciona una carrera</option>
                                       </select>
                                     </div>
                                   </div>
@@ -339,6 +338,21 @@
 
 	<!-- Custom scripts for all pages-->
 	<script src="/js/sb-admin-2.min.js"></script>
+
+  <!--Script getCarreras-->
+  <script>
+    $(document).ready(() => {
+      $.ajax({
+        url: '/php/getCarreras.php',
+        success: (data) => {
+          var carreras = JSON.parse(data).carreras;
+          carreras.forEach((value, index) => {
+            $('#carrera').append(`<option value="${value.id_carrera}">${value.nombre}</option>`);
+          });
+        }
+      });
+    });
+  </script>
 
   <!--Script add predonante-->
   <script>
