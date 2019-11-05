@@ -14,7 +14,16 @@
     $result = mysqli_query($con, $sql);
 
     if($result){
-        echo 'Guardado';
+        $sql = "SELECT MAX(id) FROM donadores;";
+        while($rs=mysqli_fetch_array($result)){
+             $sql = "INSERT INTO datosutd VALUES (@, ".$rs['id'].", '$carrera')";
+              $result = mysqli_query($con, $sql);
+              if($result){
+                echo 'Guardado';
+              }else {
+                  echo '!Error! D:';
+              }
+        }
     }
     else{
         echo '!Error! D:';
