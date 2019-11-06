@@ -9,17 +9,22 @@
     $sangre = $_POST['sangre'];
     $carrera = $_POST['carrera'];
     $cuatri = $_POST['cuatri'];
+    $rnombre = $_POST['rnombre'];
+    $rtel = $_POST['rtel'];
 
-    $sql = "INSERT INTO donadores VALUES (@, '$nombre', '$ape_pat', '$ape_mat', '$email', '$tel', '', $sangre, 1, '', '', '')";
-    $result = mysqli_query($con, $sql);
+    $sql = "INSERT INTO donadores VALUES (@, '$nombre', '$ape_pat', '$ape_mat', '$email', '$tel', '', $sangre, 1, '$rnombre', '$rtel', '')";
+
+    $result=mysqli_query($con,$sql);
 
     if($result){
-        $sql = "SELECT MAX(id) FROM donadores;";
+        $sql = "SELECT MAX(id) AS id FROM donadores;";
+        $result=mysqli_query($con,$sql);
         while($rs=mysqli_fetch_array($result)){
-             $sql = "INSERT INTO datosutd VALUES (@, ".$rs['id'].", '$carrera')";
+              $sql = "INSERT INTO datosutd VALUES (@, ".$rs['id'].", '$carrera', '$cuatri' )";
+
               $result = mysqli_query($con, $sql);
               if($result){
-                echo 'Guardado';
+                echo 'Alumno Guardado';
               }else {
                   echo '!Error! D:';
               }
