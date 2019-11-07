@@ -25,88 +25,104 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-  <!-- Sidebar -->
-  <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-danger sidebar sidebar-dark accordion" id="accordionSidebar">
 
-    <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-      <div class="sidebar-brand-icon rotate-n-15">
-          <img class="img-profile rounded-circle" height="60em" width="60em" src="/img/vidas2.png">
-      </div>
-      <div class="sidebar-brand-text mx-3">VIDAS</div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-      <a class="nav-link" href="/index.html">
-        <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    <div class="sidebar-heading">
-      Interface
-    </div>
-
-    <!-- Nav Item - Donadores Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#donantes" aria-expanded="true" aria-controls="donantes">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Donadores</span>
-      </a>
-      <div id="donantes" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Pre-donantes</h6>
-          <a class="collapse-item" href="/predonantes/nuevo/">Ingresar Nuevo</a>
-          <a class="collapse-item" href="/predonantes/consultar/">Consultar</a>
-          <div class="collapse-divider"></div>
-          <h6 class="collapse-header">Donadores Efectivos</h6>
-          <a class="collapse-item" href="/donadores/nuevo/">Ingresar Nuevo</a>
-          <a class="collapse-item" href="/donadores/consultar/">Consultar</a>
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+            <img class="img-profile rounded-circle" height="60em" width="60em" src="/img/vidas2.png">
         </div>
+        <div class="sidebar-brand-text mx-3">VIDAS</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item active">
+        <a class="nav-link" href="/index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
       </div>
-    </li>
-    <!-- Nav Item - Donadores Collapse Menu -->
 
-    <li class="nav-item active">
-      <a class="nav-link" href="/graficas/">
-        <i class="fas fa-fw fa-chart-area"></i>
-        <span>Gr&aacute;ficas</span>
-      </a>
-    </li>
-
-    <!-- Nav Item - Donadores Collapse Menu -->
-    <li class="nav-item">
-      <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#camp" aria-expanded="true" aria-controls="camp">
-        <i class="fas fa-fw fa-folder"></i>
-        <span>Campa&ntilde;as</span>
-      </a>
-      <div id="camp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-        <div class="bg-white py-2 collapse-inner rounded">
-          <h6 class="collapse-header">Pre-donantes</h6>
-          <a class="collapse-item" href="/campanias/nueva/">Ingresar Nueva</a>
-          <a class="collapse-item" href="/campanias/consultar">Consultar</a>
+      <!-- Nav Item - Donadores Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#donantes" aria-expanded="true" aria-controls="donantes">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Donadores</span>
+        </a>
+        <div id="donantes" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pre-donantes</h6>
+            <a class="collapse-item" href="/predonantes/nuevo/">Ingresar Nuevo</a>
+            <a class="collapse-item" href="/predonantes/consultar/">Consultar</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Donadores Efectivos</h6>
+            <a class="collapse-item" href="/donadores/nuevo/">Ingresar Nuevo</a>
+            <a class="collapse-item" href="/donadores/consultar/">Consultar</a>
+            <h6 class="collapse-header">Donadores UTD</h6>
+            <a class="collapse-item" href="/donadores/consultar/">Consultar</a>
+          </div>
         </div>
+      </li>
+      <!-- Nav Item - Donadores Collapse Menu -->
+
+      <li class="nav-item active">
+        <a class="nav-link" href="/tables.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Gr&aacute;ficas</span>
+        </a>
+      </li>
+
+      <!-- Nav Item - Donadores Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#camp" aria-expanded="true" aria-controls="camp">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Campa&ntilde;as</span>
+        </a>
+        <div id="camp" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Pre-donantes</h6>
+            <a class="collapse-item" href="#">Ingresar Nueva</a>
+            <a class="collapse-item" href="/tables.html">Consultar</a>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#carreras" aria-expanded="true" aria-controls="camp">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Carreras</span>
+        </a>
+        <div id="carreras" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header"></h6>
+            <a class="collapse-item" href="/carreras/nuevo/">Ingresar Nueva</a>
+            <a class="collapse-item" href="/carreras/consultar/">Consultar</a>
+          </div>
+        </div>
+      </li>
+      <!-- Nav Item - Donadores Collapse Menu -->
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
-    </li>
-    <!-- Nav Item - Donadores Collapse Menu -->
 
-    <!-- Divider -->
-    <hr class="sidebar-divider d-none d-md-block">
-
-    <!-- Sidebar Toggler (Sidebar) -->
-    <div class="text-center d-none d-md-inline">
-      <button class="rounded-circle border-0" id="sidebarToggle"></button>
-    </div>
-
-  </ul>
-  <!-- End of Sidebar -->
+    </ul>
+    <!-- End of Sidebar -->
 
   <!-- Content Wrapper -->
   <div id="content-wrapper" class="d-flex flex-column">
