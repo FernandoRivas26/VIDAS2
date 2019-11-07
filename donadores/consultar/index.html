@@ -205,11 +205,11 @@
 
           <div class="card shadow mb-4">
 						<div class="card-header py-3">
-							<h6 class="m-0 font-weight-bold">Consultar Pre-Donantes UTD</h6>
+							<h6 class="m-0 font-weight-bold">Consultar Donantes</h6>
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="tableUTD" width="100%" cellspacing="0">
+								<table class="table table-bordered" id="tableDon" width="100%" cellspacing="0">
 									<thead>
 										<tr>
 											<th>Nombre</th>
@@ -297,13 +297,13 @@
 
   <script>
 		$(document).ready(() => {
-      var tableUtd = $('#tableUTD').DataTable();
+      var tabledon = $('#tableDon').DataTable();
       $.ajax({
-        url: '/php/getDonadoresUTD.php',
+        url: '/php/getDonadores.php',
         success: (data) => {
-            var utd = JSON.parse(data).utd;
+            var utd = JSON.parse(data).donadores;
             utd.forEach((value, index) => {
-              tableUtd.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel]).draw();
+              tabledon.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel]).draw();
             });
         }
       });
