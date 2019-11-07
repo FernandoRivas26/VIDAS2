@@ -207,7 +207,7 @@
 											<th>Tipo de sangre</th>
 											<th>Nombre responsable</th>
 											<th>N&uacute;mero responsable</th>
-											<th>id</th>
+											<th>Acciones</th>
 										</tr>
 									</thead>
 									<tfoot>
@@ -218,7 +218,7 @@
 											<th>Tipo de sangre</th>
 											<th>Nombre responsable</th>
 											<th>N&uacute;mero responsable</th>
-											<th>id</th>
+											<th>Acciones</th>
 										</tr>
 									</tfoot>
 									<tbody>
@@ -294,19 +294,37 @@
 	<script src="/js/demo/datatables-demo.js"></script>
 
 	<script>
+    var tablePre = $('#tablePre').DataTable();
 		$(document).ready(() => {
-      var tablePre = $('#tablePre').DataTable();
-      $.ajax({
+
+      llenarTabla(tablePre);
+
+    });
+
+    function llenarTabla(table){
+        table.clear().draw();
+        $.ajax({
         url: '/php/getPredonante.php',
         success: (data) => {
             var predonante = JSON.parse(data).predonantes;
             predonante.forEach((value, index) => {
-              tablePre.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel, value.id]).draw();
+              table.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel, `<button class="btn btn-success btn-block" onClick="efectivo('${value.id}')">Hacer Efectivo</button>`]).draw();
             });
         }
       });
+    }
 
-    });
+    function efectivo(id){
+        $.ajax({
+        url: '/php/setEfectivo.php',
+        type: 'POST',
+        data: {id, fecha: `${new Date().getFullYear()}-${new Date().getMonth()+1}-${new Date().getDate()}`},
+        success: (data) => {
+            alert(data);
+            llenarTabla(tablePre);
+        }
+      });
+    }
 	</script>
 
 </body>
