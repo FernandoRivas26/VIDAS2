@@ -197,6 +197,11 @@
 							<h6 class="m-0 font-weight-bold">Consultar Pre-Donantes</h6>
 						</div>
 						<div class="card-body">
+                            <div class="row mb-4">
+                                <div class="col">
+                                    <button class="btn btn-warning" id="btn-recargar">Recargar datos</button>
+                                </div>
+                            </div>
 							<div class="table-responsive">
 								<table class="table table-bordered" id="tablePre" width="100%" cellspacing="0">
 									<thead>
@@ -298,6 +303,10 @@
 		$(document).ready(() => {
 
       llenarTabla(tablePre);
+
+      $('#btn-recargar').click(() => {
+        llenarTabla(tablePre);
+      });
 
     });
 
