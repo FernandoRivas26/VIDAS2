@@ -204,7 +204,7 @@
 						</div>
 						<div class="card-body">
 							<div class="table-responsive">
-								<table class="table table-bordered" id="tablePre" width="100%" cellspacing="0">
+								<table class="table table-bordered" id="tableUTD" width="100%" cellspacing="0">
 									<thead>
 										<tr>
 											<th>Nombre</th>
@@ -215,6 +215,7 @@
 											<th>N&uacute;mero responsable</th>
 											<th>Carrera</th>
                                             <th>Cuatrimestre</th>
+                                            <th>Efectivo</th>
 										</tr>
 									</thead>
 									<tfoot>
@@ -227,6 +228,7 @@
 											<th>N&uacute;mero responsable</th>
 											<th>Carrera</th>
                                             <th>Cuatrimestre</th>
+                                            <th>Efectivo</th>
 										</tr>
 									</tfoot>
 									<tbody>
@@ -281,7 +283,6 @@
       </div>
     </div>
   </div>
-/VIDAS
   <!-- Bootstrap core JavaScript-->
   <script src="/vendor/jquery/jquery.min.js"></script>
   <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -301,13 +302,13 @@
 
     <script>
 		$(document).ready(() => {
-      var tablePre = $('#tablePre').DataTable();
+      var tableUtd = $('#tableUTD').DataTable();
       $.ajax({
         url: '/php/getDonadoresUTD.php',
         success: (data) => {
-            var predonante = JSON.parse(data).predonantes;
-            predonante.forEach((value, index) => {
-              tablePre.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel,value.carrera, value.cuatri]).draw();
+            var utd = JSON.parse(data).utd;
+            utd.forEach((value, index) => {
+              tableUtd.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel,value.carrera, value.cuatri, value.efectivo]).draw();
             });
         }
       });
