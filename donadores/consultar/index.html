@@ -18,6 +18,9 @@
   <!-- Custom styles for this template-->
   <link href="/css/sb-admin-2.min.css" rel="stylesheet">
 
+  <!-- Custom styles for this page -->
+	<link href="/vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
 </head>
 
 <body id="page-top">
@@ -200,8 +203,39 @@
         <!-- Begin Page Content -->
         <div class="container-fluid">
 
-          <!-- Page Heading -->
-          <h1 class="h3 mb-4 text-gray-800">Blank Page</h1>
+          <div class="card shadow mb-4">
+						<div class="card-header py-3">
+							<h6 class="m-0 font-weight-bold">Consultar Pre-Donantes UTD</h6>
+						</div>
+						<div class="card-body">
+							<div class="table-responsive">
+								<table class="table table-bordered" id="tableUTD" width="100%" cellspacing="0">
+									<thead>
+										<tr>
+											<th>Nombre</th>
+											<th>Correo</th>
+											<th>T&eacute;lefono</th>
+											<th>Tipo de sangre</th>
+											<th>Nombre responsable</th>
+											<th>N&uacute;mero responsable</th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<th>Nombre</th>
+											<th>Correo</th>
+											<th>T&eacute;lefono</th>
+											<th>Tipo de sangre</th>
+											<th>Nombre responsable</th>
+											<th>N&uacute;mero responsable</th>
+										</tr>
+									</tfoot>
+									<tbody>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
 
         </div>
         <!-- /.container-fluid -->
@@ -258,6 +292,24 @@
 
   <!-- Custom scripts for all pages-->
   <script src="/js/sb-admin-2.min.js"></script>
+  <script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+  <script>
+		$(document).ready(() => {
+      var tableUtd = $('#tableUTD').DataTable();
+      $.ajax({
+        url: '/php/getDonadoresUTD.php',
+        success: (data) => {
+            var utd = JSON.parse(data).utd;
+            utd.forEach((value, index) => {
+              tableUtd.row.add([value.nombre, value.correo, value.telefono, value.tipo, value.resp_nombre, value.resp_tel]).draw();
+            });
+        }
+      });
+
+    });
+	</script>
 
 </body>
 
